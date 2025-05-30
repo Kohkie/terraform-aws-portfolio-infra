@@ -20,12 +20,26 @@
 - Terraform v1.5以上インストール済み
 
 ---
+## 🗂 構成図
 
-## 🛠️ デプロイ手順
+![構成図](https://github.com/Kohkie/terraform-aws-portfolio-infra/blob/main/May%2030,%202025%20at%2007_56_38%20PM.png?raw=true)
 
-```bash
-# 変数ファイルを指定して plan 実行
-terraform plan -var-file="terraform.tfvars"
 
-# 実際に構築（apply）
-terraform apply -var-file="terraform.tfvars"
+---
+
+
+## 🛠 デプロイ手順
+
+以下の手順で、Terraform による AWS インフラの構築を実行できます。
+
+### 1. `terraform.tfvars` を準備
+
+変数定義ファイル `terraform.tfvars` を用意し、以下のような内容を記述します：
+
+```hcl
+aws_region = "ap-northeast-1"
+instance_type = "t3.micro"
+key_name = "your-key-name"
+db_name = "mydb"
+db_username = "admin"
+db_password = "your-secure-password"
